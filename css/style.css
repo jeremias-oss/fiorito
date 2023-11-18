@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "Brice";
+    src: local(assets/fonts/Brice-BlackSemiExpanded);
+}
+
+* {
+    text-decoration: none;
+    background-color: white;
+}
+
+
+h2{
+    font-family: Brice;
+    color: #BE1D2D;
+    text-align: center;
+    font-size: 2rem;
+    margin: 15px;
+}
+
+
+
+
+.menu_container {
+    border: 5px solid #0080C9;
+    margin: 5%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      
+}
+
+.item_container {
+    width: 80%;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+}
+
+
+.item_title {
+    font-family: roc-grotesk;
+    font-weight: 800;
+    color: #BE1D2D;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.item_description {
+    font-family: roc-grotesk;
+    font-weight: 400;
+    color: #BE1D2D;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.split_line {
+    border: 1px solid #0080C9;
+    width: 85%;
+    margin: 2px;    
+}
+
+.add_button {
+    background-color: #BE1D2D;
+    color: #ffffff;
+    font-family: roc-grotesk;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2rem;
+    height: 40px;  
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.add_button:hover {
+    background-color: #0080C9;
+}
+
