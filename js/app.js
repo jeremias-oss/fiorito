@@ -1,110 +1,161 @@
+const pizzas = [
+    {
+        nombre: "MUZZA",
+        precio: 1050,
+        descripción: "Simple y clásica.",
+    },
+    {
+        nombre: "ESPECIAL",
+        precio: 1150,
+        descripción: "Jamón, queso y morrones.",
+    },
+    {
+        nombre: "NAPOLITANA CLÁSICA",
+        precio: 1200,
+        descripción: "Con rodajas de tomate, orégano y aceitunas.",
+    }
+];
 
-let total = [];
+const sandwichs = [
+    {
+        nombre: "MILANESA PARA 1",
+        precio: 850,
+        descripción: "Pan casero, jamón, queso, tomate, huevo y cebolla caramelizada.",
+    },
+    {
+        nombre: "MILANESA PARA 2",
+        precio: 1500,
+        descripción: "Pan casero, jamón, queso, tomate, huevo y cebolla caramelizada.",
+    },
+    {
+        nombre: "LOMO PARA 1",
+        precio: 850,
+        descripción: "Pan casero, lomo, jamón, queso, tomate, huevos y cebolla caramelizada.",
+    },
+    {
+        nombre: "LOMO PARA 2",
+        precio: 1500,
+        descripción: "Pan casero, lomo, jamón, queso, tomate, huevos y cebolla caramelizada.",
+    },
+];
 
-//Calculador de total
-let suma = 0;
-function calculator(){    
-    for (let i = 0; i < total.length; i++) {
-        suma += total[i];
-    };
-};
+const empanadas = [
+    {
+        nombre: "CARNE",
+        precio: 150,
+    },
+    {
+        nombre: "JAMON Y QUESO",
+        precio: 150,
+    },
+    {
+        nombre: "VEGGIE",
+        precio: 120,
+    },
+];
 
-//precios de productos
-//"Elija su pizza: \n 1 - Muzzarella $2000 \n 2 - Especial $2700 \n 3 - Fugazzetta $2300 \n 4 - Napolitana $2500"
-const pizzaPrice = [2000, 2700, 2300, 2500];
-//"Elija su sandwich: \n 1 - Hamburguesa $1500 \n 2 - Hamburguesa completa $2000 \n 3 - Lomo $1500 \n 4 - Lomo completo $2000"
-const sandwichPrice = [1500, 2000, 1500, 2000];
-//"Elija su bebida: \n 1 - Coca lata $500 \n 2 - Coca litro $1000 \n 3 - Sprite lata $500 \n 4 - Sprite litro $1000"
-const drinkPrice = [500, 1000, 500, 1000];
+const bebidas = [
+    {
+        nombre: "QUILMES LATA",
+        precio: 350,
+    },
+    {
+        nombre: "AGUA",
+        precio: 200,
+    },
+    {
+        nombre: "GASESA CHICA",
+        precio: 250,
+    },
+];
 
-//Selector de pizza
-function selectPizza() {        
-    let pizzaText = prompt("Elija su pizza: \n 1 - Muzzarella $2000 \n 2 - Especial $2700 \n 3 - Fugazzetta $2300 \n 4 - Napolitana $2500");
-    if (pizzaText == 1) {
-        total.unshift(pizzaPrice[0]);        
-        addProduct();
-    } else if (pizzaText == 2) {
-        total.unshift(pizzaPrice[1]);
-        addProduct();
-    } else if (pizzaText == 3) {
-        total.unshift(pizzaPrice[2]);
-        addProduct();
-    } else if (pizzaText == 4) {
-        total.unshift(pizzaPrice[3]);
-        addProduct();
-    };
-};
+const containerPizza = document.getElementById ("pizza");
 
-//Selector de sandwich
-function selectSandwich() {        
-    let sandwichText = prompt("Elija su sandwich: \n 1 - Hamburguesa $1500 \n 2 - Hamburguesa completa $2000 \n 3 - Lomo $1500 \n 4 - Lomo completo $2000");
-    if (sandwichText == 1) {
-        total.unshift(sandwichPrice[0]);        
-        addProduct();
-    } else if (sandwichText == 2) {
-        total.unshift(sandwichPrice[1]);
-        addProduct();
-    } else if (sandwichText == 3) {
-        total.unshift(sandwichPrice[2]);
-        addProduct();
-    } else if (sandwichText == 4) {
-        total.unshift(sandwichPrice[3]);
-        addProduct();
-    };
-};
+const containerSandwich = document.getElementById ("sandwich");
 
-//Selector de bebida
-function selectDrink() {        
-    let drinkText = prompt("Elija su bebida: \n 1 - Coca lata $500 \n 2 - Coca litro $1000 \n 3 - Sprite lata $500 \n 4 - Sprite litro $1000");
-    if (drinkText == 1) {
-        total.unshift(drinkPrice[0]);        
-        addProduct();
-    } else if (drinkText == 2) {
-        total.unshift(drinkPrice[1]);
-        addProduct();
-    } else if (drinkText == 3) {
-        total.unshift(drinkPrice[2]);
-        addProduct();
-    } else if (drinkText == 4) {
-        total.unshift(drinkPrice[3]);
-        addProduct();
-    };
-};
+const containerEmpanada = document.getElementById ("empanadas");
 
-//Finalizar pedido
-function addAdress() {
-    let adressText = prompt ("Ingresá tu direccón dirección");
-    let endOrder = prompt ("Tu total es de " + suma + " y tu dirección es " + adressText + " ¿Es correcto? \n 1 - Si \n 2 - No")
-    if (endOrder == 1) {
-        window.alert("¡Tu pedido está en camino!")
-    } else if (endOrder == 2) {
-        welcome();
-    };
-};
+const containerBebidas = document.getElementById ("bebidas");
 
-//Agregar otro procto
-function addProduct() {
-    let addProductText = prompt ("¿Querés agregar algo más? \n 1 - Si \n 2 - No");
-    if (addProductText == 1) {
-        welcome();
-    }else if (addProductText == 2) {
-        calculator();
-        window.alert("Tu total es de $" + suma);
-        addAdress();
-}    
-};
+const pizzaRender = () => {
+    pizzas.forEach((pizza) => {
+        const pizzaItem = document.createElement("div");
+        pizzaItem.classList.add("item_container");
+        pizzaItem.innerHTML =`
+                <div class="text_container">
+                <p class="item_title">${pizza.nombre} $${pizza.precio}</p>
+                <p class="item_description">${pizza.descripción}</p>           
+                </div>
+                <div class="add_button">+</div>
+                `;
 
-//Funcion inicial
-function welcome() {
-    let welcomeText = prompt("Bienvenido a fiorito ¿Que va a querer? \n 1 - pizza \n 2 - sandwich \n 3 - bebida");
-    if (welcomeText == 1) {
-        selectPizza();
-    } else if (welcomeText == 2) {
-        selectSandwich();
-    } else if (welcomeText == 3) {
-        selectDrink();
-    };
+        containerPizza.append(pizzaItem);    
+    });    
 };
 
 
-welcome();
+const sandwichRender = () => {
+    sandwichs.forEach((sandwich) => {
+        const sandwichItem = document.createElement("div");
+        sandwichItem.classList.add("item_container");
+        sandwichItem.innerHTML =`
+                <div class="text_container">
+                <p class="item_title">${sandwich.nombre} $${sandwich.precio}</p>
+                <p class="item_description">${sandwich.descripción}</p>           
+                </div>
+                <div class="add_button">+</div>
+                `;
+
+        containerSandwich.append(sandwichItem);    
+    });    
+};
+
+const empanadasRender = () => {
+    empanadas.forEach((empanada) => {
+        const empanadaItem = document.createElement("div");
+        empanadaItem.classList.add("item_container");
+        empanadaItem.innerHTML =`
+                <div class="text_container">
+                <p class="item_title">${empanada.nombre} $${empanada.precio}</p>
+                <p class="item_description">${empanada.descripción}</p>           
+                </div>
+                <div class="add_button">+</div>
+                `;
+
+            containerEmpanada.append(empanadaItem);    
+    });    
+};
+
+const bebidasRender = () => {
+    bebidas.forEach((bebida) => {
+        const bebidasItem = document.createElement("div");
+        bebidasItem.classList.add("item_container");
+        bebidasItem.innerHTML =`
+                <div class="text_container">
+                <p class="item_title">${bebida.nombre} $${bebida.precio}</p>
+                <p class="item_description">${bebida.descripción}</p>           
+                </div>
+                <div class="add_button">+</div>
+                `;
+
+        containerBebidas.append(bebidasItem);    
+    });    
+};
+
+pizzaRender();
+sandwichRender();
+empanadasRender();
+bebidasRender();
+
+const botonCarrito = document.getElementsByClassName("add_button");
+
+
+const agregarProducto = (e) => {
+    //window.alert("el boton funciona");
+    if (e.target.classList.contains("add_button")) {
+        const productoAgregado = e.target.parentElement;
+        
+    }
+}
+
+botonCarrito.addEventListener('click', agregarProducto);

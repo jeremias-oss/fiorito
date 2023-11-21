@@ -7,20 +7,34 @@
     <link rel="stylesheet" href="https://use.typekit.net/jya5ygx.css">
     <title>Fiorito</title>
 </head>
-<body>
+<body class="">
+    <header>
+        <img class="logo" src="assets/images/logo_fiorito.svg">
+        <div class="carrito" id="boton_carrito"><img src="assets/images/carrito_compras.svg" alt="comprar" height="50px"></div>
+    </header>
     <div class="menu_container">
-    <h2>Pizza</h2>
-    <hr class="split_line">
-        <div class="item_container">
-            <div class="text_container">
-                <p class="item_title">MUZZA $1050</p>
-                <p class="item_description">Simple y clásica.</p>           
-            </div>
-            <div class="add_button">+</div>   
-        </div>
-         
+        <h2>Pizza</h2>
+        <hr class="split_line">
+            <div class="item_render" id="pizza"></div>              
     </div>
 
+    <div class="menu_container">
+        <h2>Sandwichs</h2>
+        <hr class="split_line">
+            <div class="item_render" id="sandwich"></div>              
+    </div>
+
+    <div class="menu_container">
+        <h2>Empanadas</h2>
+        <hr class="split_line">
+            <div class="item_render" id="empanadas"></div>              
+    </div>
+  
+    <div class="menu_container">
+        <h2>Bebidas</h2>
+        <hr class="split_line">
+            <div class="item_render" id="bebidas"></div>              
+    </div>
 
     <script src="js/app.js"></script>
 </body>
