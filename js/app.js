@@ -43,14 +43,17 @@ const empanadas = [
     {
         nombre: "CARNE",
         precio: 150,
+        descripción: "Empanada de carne.",
     },
     {
         nombre: "JAMON Y QUESO",
         precio: 150,
+        descripción: "Empanada de jamón y queso."
     },
     {
         nombre: "VEGGIE",
         precio: 120,
+        descripción: "Empanada de vegetariana."
     },
 ];
 
@@ -58,14 +61,17 @@ const bebidas = [
     {
         nombre: "QUILMES LATA",
         precio: 350,
+        descripción: "Cerveza en lata 475 mm."
     },
     {
         nombre: "AGUA",
         precio: 200,
+        descripción: "Agua en botella chica."
     },
     {
         nombre: "GASESA CHICA",
         precio: 250,
+        descripción: "Gaseosa en botella chica."
     },
 ];
 
